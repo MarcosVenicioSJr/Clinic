@@ -1,4 +1,5 @@
-﻿using Clinic.Interfaces.Employee;
+﻿using Clinic.Interfaces;
+using Clinic.Interfaces.Employee;
 using Clinic.Models;
 
 namespace Clinic.Services

@@ -1,6 +1,7 @@
 ﻿using Clinic.Context;
 using Clinic.Interfaces.Client;
 using Clinic.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Clinic.Repository
 {
@@ -18,9 +19,9 @@ namespace Clinic.Repository
             throw new NotImplementedException();
         }
 
-        public Task<List<Client>> GetAll()
+        public async Task<List<Client>> GetAll()
         {
-            throw new NotImplementedException();
+            return await _context.Clients.ToListAsync();
         }
 
         public Task<Client> GetById(int id)
