@@ -1,4 +1,5 @@
 ﻿using Clinic.Interfaces.Client;
+using Clinic.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Clinic.Controllers
@@ -14,9 +15,21 @@ namespace Clinic.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetAll()
+        public IActionResult Get()
         {
             return Ok(_clientService.GetAll());
+        }
+
+        [HttpGet]
+        [Route("{id}")]
+        public IActionResult Get([FromRoute]int id)
+        {
+            Client client = _clientService.GetById(id);
+
+            if (client == null)
+                return NotFound("Client not found!");
+
+            return Ok(client);
         }
     }
 }

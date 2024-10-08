@@ -24,9 +24,9 @@ namespace Clinic.Repository
             return await _context.Clients.ToListAsync();
         }
 
-        public Task<Client> GetById(int id)
+        public async Task<Client> GetById(int id)
         {
-            throw new NotImplementedException();
+            return await _context.Clients.FirstOrDefaultAsync(x => x.Id == id);
         }
 
         public void Insert(Client entity)

@@ -5,9 +5,9 @@ namespace Clinic.Mapper
 {
     public static class ClientMapper
     {
-        public static ClientGetAllResponse MapperGetAll(Client client)
+        public static ClientGetResponse MapperGetAll(Client client)
         {
-            return new ClientGetAllResponse
+            return new ClientGetResponse
             {
                 Name = client.Name,
                 Email = client.Email,

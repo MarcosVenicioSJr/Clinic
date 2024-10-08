@@ -2,7 +2,7 @@
 
 namespace Clinic.Models.Responses
 {
-    public class ClientGetAllResponse
+    public class ClientGetResponse
     {
         public DateTime NextAppointment { get; set; }
         public MedicalPlan MedicalPlan { get; set; }

@@ -14,10 +14,10 @@ namespace Clinic.Services
             _clientRepository = clientRepository;
         }
 
-        public List<ClientGetAllResponse> GetAll()
+        public List<ClientGetResponse> GetAll()
         {
             List<Client> clients = _clientRepository.GetAll().Result;
-            List<ClientGetAllResponse> response = new List<ClientGetAllResponse>();
+            List<ClientGetResponse> response = new List<ClientGetResponse>();
 
             Parallel.ForEach(clients, client =>
             {
@@ -29,7 +29,8 @@ namespace Clinic.Services
 
         public Client GetById(int id)
         {
-            throw new NotImplementedException();
+            Client client = _clientRepository.GetById(id).Result;
+            return client;
         }
 
         public void Update(Client entity)
