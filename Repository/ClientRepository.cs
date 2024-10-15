@@ -29,9 +29,15 @@ namespace Clinic.Repository
             return await _context.Clients.FirstOrDefaultAsync(x => x.Id == id);
         }
 
+        public async Task<Client> GetByEmail(string email)
+        {
+            return await _context.Clients.FirstOrDefaultAsync(x => x.Email == email);
+        }
+
         public void Insert(Client entity)
         {
-            throw new NotImplementedException();
+            _context.Clients.AddAsync(entity);
+            _context.SaveChanges();
         }
 
         public void Save()

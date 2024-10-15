@@ -1,11 +1,15 @@
-﻿using Clinic.Interfaces;
-using Clinic.Interfaces.Employee;
+﻿using Clinic.Interfaces.Employee;
 using Clinic.Models;
 
 namespace Clinic.Services
 {
     public class EmployeeService : IEmployeeService
     {
+        public string Create(Employee entity)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<Employee> GetAll()
         {
             throw new NotImplementedException();

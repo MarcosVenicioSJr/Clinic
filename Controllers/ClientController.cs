@@ -1,5 +1,6 @@
 ﻿using Clinic.Interfaces.Client;
 using Clinic.Models;
+using Clinic.Models.Requests;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Clinic.Controllers
@@ -30,6 +31,13 @@ namespace Clinic.Controllers
                 return NotFound("Client not found!");
 
             return Ok(client);
+        }
+
+        [HttpPost]
+        public IActionResult Post([FromBody] CreateClientRequest request)
+        {
+            _clientService.Create(request);
+            return Created();
         }
     }
 }
