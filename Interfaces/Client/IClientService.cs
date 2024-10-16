@@ -8,5 +8,7 @@ namespace Clinic.Interfaces.Client
         List<ClientGetResponse> GetAll();
 
         void Create(CreateClientRequest entity);
+
+        void MakeAppointment(MakeAppointmentRequest entity);
     }
 }

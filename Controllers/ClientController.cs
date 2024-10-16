@@ -39,5 +39,12 @@ namespace Clinic.Controllers
             _clientService.Create(request);
             return Created();
         }
+
+        [HttpPut]
+        public IActionResult MakeAppointment([FromBody] MakeAppointmentRequest request)
+        {
+            _clientService.MakeAppointment(request);
+            return Ok();
+        }
     }
 }

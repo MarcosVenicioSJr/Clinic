@@ -46,9 +46,21 @@ namespace Clinic.Services
             return client;
         }
 
+        public void MakeAppointment(MakeAppointmentRequest entity)
+        {
+            Client client = GetById(entity.Id);
+
+            if (client == null)
+                return;
+
+            client.NextAppointment = entity.AppointmentDate;
+
+            Update(client);
+        }
+
         public void Update(Client entity)
         {
-            throw new NotImplementedException();
+            _clientRepository.Update(entity);
         }
     }
 }

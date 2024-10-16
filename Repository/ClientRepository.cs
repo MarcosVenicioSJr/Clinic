@@ -37,17 +37,20 @@ namespace Clinic.Repository
         public void Insert(Client entity)
         {
             _context.Clients.AddAsync(entity);
-            _context.SaveChanges();
+
+            Save();
         }
 
         public void Save()
         {
-            throw new NotImplementedException();
+            _context.SaveChanges();
         }
 
         public void Update(Client entity)
         {
-            throw new NotImplementedException();
+            _context.Clients.Attach(entity);
+            _context.Entry(entity).State = EntityState.Modified;
+            _context.SaveChanges();
         }
     }
 }
